@@ -13,5 +13,13 @@
 				"AIModule"
 			]
 		}
+	],
+	"TargetPlatforms": [
+		"AllDesktop",
+		"PS4",
+		"Switch",
+		"WindowsNoEditor",
+		"XboxOne",
+		"MacNoEditor"
 	]
 }
