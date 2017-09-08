@@ -2,10 +2,7 @@
 
 #include "BattleTank.h"
 #include "TankBarrel.h"
-#include "Projectile.h"
-#include "TankAimingComponent.h"
 #include "Tank.h"
-
 
 // Sets default values
 ATank::ATank()
@@ -13,40 +10,6 @@ ATank::ATank()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
-	auto TankName = GetName();
-	UE_LOG(LogTemp, Warning, TEXT("%s JADER Tank C++ Construct"), *TankName);
-}
-
-void::ATank::BeginPlay()
-{
-	Super::BeginPlay();
-
-	auto TankName = GetName();
-	UE_LOG(LogTemp, Warning, TEXT("%s JADER Tank C++ Begin Play"), *TankName);
-}
-
-void ATank::AimAt(FVector OutHitLocation)
-{
-	if (!ensure(TankAimingComponent)) {
-		return;
-	}
-	TankAimingComponent->AimAt(OutHitLocation, LaunchSpeed);
-}
-
-void ATank::Fire()
-{
-	if (!ensure(Barrel))
-	{
-		return;
-	}
-	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadInTimeSeconds;
-	if (isReloaded) {
-
-		auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectibleBlueprint, Barrel->GetSocketLocation(FName("Projectile")), Barrel->GetSocketRotation(FName("Projectile")));
-
-		Projectile->LaunchProjectile(LaunchSpeed);
-		LastFireTime = FPlatformTime::Seconds();
-	}
 }
 
 
