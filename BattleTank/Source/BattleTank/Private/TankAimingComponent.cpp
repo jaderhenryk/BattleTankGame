@@ -52,12 +52,12 @@ EFiringState UTankAimingComponent::GetFiringState() const
 	return EFiringState();
 }
 
-int UTankAimingComponent::GetAmmoLeft() const
+int32 UTankAimingComponent::GetAmmoLeft() const
 {
 	return AmmoLeft;
 }
 
-int UTankAimingComponent::GetTotalAmmo() const
+int32 UTankAimingComponent::GetTotalAmmo() const
 {
 	return TotalAmmo;
 }

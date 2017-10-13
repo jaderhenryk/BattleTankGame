@@ -37,10 +37,10 @@ public:
 	EFiringState GetFiringState() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Firing")
-	int GetAmmoLeft() const;
+	int32 GetAmmoLeft() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Firing")
-	int GetTotalAmmo() const;
+	int32 GetTotalAmmo() const;
 
 protected:
 
@@ -67,6 +67,12 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 4000;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	int32 AmmoLeft = 10;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	int32 TotalAmmo = 10;
+
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	TSubclassOf<AProjectile> ProjectibleBlueprint;
 
@@ -77,7 +83,4 @@ private:
 
 	FVector AimDirection;
 
-	int AmmoLeft = 10;
-
-	int TotalAmmo = 10;
 };
