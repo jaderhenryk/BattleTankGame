@@ -13,17 +13,17 @@ UCLASS()
 class BATTLETANK_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
-protected:
-
-	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
-	void FoundTankAimingComponent(UTankAimingComponent * AimingComponentReference);
 
 public:
 
 	virtual void BeginPlay() override;
 
 	virtual void Tick(float DeltaTime) override;
+
+protected:
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
+	void FoundTankAimingComponent(UTankAimingComponent * AimingComponentReference);
 
 private:
 
