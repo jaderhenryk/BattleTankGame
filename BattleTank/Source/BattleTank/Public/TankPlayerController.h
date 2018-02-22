@@ -35,6 +35,8 @@ private:
 
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector & HitLocation) const;
 
+	void SetPawn(APawn * InPawn);
+
 	UPROPERTY(EditDefaultsOnly)
 	float CrosshairXLocation = 0.5;
 
@@ -43,4 +45,7 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	float LineTraceRange = 1000000;
+
+	UFUNCTION()
+	void OnControlledTankDeath();
 };
