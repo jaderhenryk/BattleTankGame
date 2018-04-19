@@ -1,3 +1,3 @@
 # BattleTankGame
-A open-world tank battle game developed in Unreal Engine 4.
+A open-world battle tank game developed in Unreal Engine 4.
 
